@@ -11,11 +11,11 @@ const Filter = () => {
 }
   return (
     <Label>
-      Find contacts by name
+      <h1>Contacts</h1>
       <FilterInput
         type="text"
         name="filter"
-        placeholder="Name"
+        placeholder="Filter"
         onChange={handleChange}
       ></FilterInput>
     </Label>

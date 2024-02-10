@@ -1,20 +1,10 @@
 import styled from '@emotion/styled';
 
-export const Title = styled.h2`
-  font-size: 30px;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-top: 0;
-  margin-bottom:10px
-
-`;
-
 export const ContactsList = styled.ul`
   list-style: none;
   margin: 0;
   margin-bottom: 35px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 25px;
   background-color: white;
 `;
@@ -27,47 +17,20 @@ export const ListItem = styled.li`
 `;
 
 export const DeleteBtn = styled.button`
-  width: 100px;
-  height: 30px;
-  margin-left: 10px;
-  color: rgb(255, 255, 255);
-  border-radius: 5px;
-  font-family: Lato, sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-  display: inline-block;
-  outline: none;
-  position: relative;
-  background: #0fc1dd;
-  border: none;
-  z-index: 1;
-  box-shadow: rgba(255, 255, 255, 0.5) 2px 2px 2px 0px inset,
-    rgba(0, 0, 0, 0.1) 7px 7px 20px 0px, rgba(0, 0, 0, 0.1) 4px 4px 5px 0px;
-
-  &:after {
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 100%;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    background-color: #2ba2cd;
-    border-radius: 5px;
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-  &:hover {
-    color: #fff;
-  }
-
-  &:hover:after {
-    left: 0;
-    width: 100%;
-  }
+margin: 0px;
+margin-left: 10px;
+width: 100px;
+padding: 0px;
+height: 30px;
+color: #black;
+border: 1px solid #000000;
+border-radius: 5px;
+cursor: pointer;
+transition: all 0.25s linear 0s;
+&:hover,
+&:focus {
+  border: 1px solid #white; background: #ff0000;
+  transform: scale(1.1);
 `;
 
 export const Message = styled.p`

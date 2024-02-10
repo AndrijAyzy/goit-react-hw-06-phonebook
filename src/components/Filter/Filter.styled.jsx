@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Label = styled.label`
+  margin: 0px;
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 10px;
@@ -20,6 +21,5 @@ export const FilterInput = styled.input`
   color: black;
   background-color: white;
 
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
+  border-radius: 5px;
 `;

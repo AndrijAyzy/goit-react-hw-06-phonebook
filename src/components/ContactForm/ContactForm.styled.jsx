@@ -4,19 +4,19 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
-  padding: 20px 30px;
+  width: 350px;
+  height: 250px;
+  padding: 30px 30px;
   padding-bottom: 25px;
   border-radius: 5px;
   margin-bottom: 35px;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: white;
 `;
 export const Title = styled.h2`
-  font-size: 30px;
-  font-weight: 600;
-  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 300;
+  text-transform: full-width;
 `;
 
 
@@ -28,7 +28,8 @@ export const Input = styled.input`
   padding: 5px;
 
   border: 0;
-  border-bottom: 2px solid gray;
+  border: 2px solid gray;
+  border-radius: 5px;
   outline: 0;
   font-size: 1.3rem;
   color: black;
@@ -38,47 +39,20 @@ export const Input = styled.input`
 `;
 
 export const AddButton = styled.button`
-  display: block;
-  width: 100%;
-  height: 30px;
-  cursor: pointer;
-  margin-top: 15px;
-  color: rgb(255, 255, 255);
-  border-radius: 5px;
-  font-family: Lato, sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-  display: inline-block;
-  box-shadow: rgba(255, 255, 255, 0.5) 2px 2px 2px 0px inset,
-    rgba(0, 0, 0, 0.1) 7px 7px 20px 0px, rgba(0, 0, 0, 0.1) 4px 4px 5px 0px;
-  outline: none;
-  position: relative;
-  background: #0fc1dd;
-  border: none;
-  z-index: 1;
-
-  &:after {
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 100%;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    background-color: #2ba2cd;
-    border-radius: 5px;
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-  &:hover {
-    color: #fff;
-  }
-
-  &:hover:after {
-    left: 0;
-    width: 100%;
-  }
+margin-top: 50px;
+font-size: 20px;
+font-weight: 300;
+width: 225px;
+padding: 0px;
+height: 35px;
+color: #black;
+border: 1px solid #000000;
+border-radius: 5px;
+cursor: pointer;
+transition: all 0.25s linear 0s;
+&:hover,
+&:focus {
+  border: 1px solid #white; background: #2dad9a;
+  transform: scale(1.1);
 `;
+
