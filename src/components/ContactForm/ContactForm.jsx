@@ -2,7 +2,6 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
 import React from 'react';
-import { FaUserPlus, FaUser } from 'react-icons/fa';
 import {
   FormField,
   Form,

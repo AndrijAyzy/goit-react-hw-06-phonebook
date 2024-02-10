@@ -1,6 +1,4 @@
-import { MdPersonSearch } from 'react-icons/md';
 import React from 'react';
-import { FaUserPlus, FaUser } from 'react-icons/fa';
 import { Input, SearchField } from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFilter } from 'redux/selectors';

@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaUserPlus, FaUser } from 'react-icons/fa';
 import { Item, List, ListBtnDel } from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts, getFilter } from 'redux/selectors';
