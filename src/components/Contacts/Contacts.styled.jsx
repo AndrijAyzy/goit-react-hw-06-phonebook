@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Title = styled.h2`
-  font-size: 30px;
+  font-size: 0;
   font-weight: 600;
   text-transform: uppercase;
   margin-top: 0;
