@@ -20,7 +20,6 @@ import {
 } from 'components/Notification/Notification';
 import { toast } from 'react-toastify';
 
-// валідація полів форми
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
     .matches(
@@ -37,20 +36,15 @@ const ContactSchema = Yup.object().shape({
 });
 
 export const ContactForm = () => {
-  // Для того щоб сповістити сторінку про те, що в інтерфейсі відбулася якась подія, необхідно відправити екшен. Для цього у бібліотеці React Redux є хук useDispatch(), який повертає посилання на функцію надсилання екшенів dispatch з об'єкта створеного нами раніше стора Redux.
   const dispatch = useDispatch();
-  // Отримуємо необхідну частину стану зі стору
   const contacts = useSelector(getContacts);
 
-  // console.log(getContacts);
 
   return (
     <Formik
-      // дивись документацію
       initialValues={{ name: '', number: '' }}
       validationSchema={ContactSchema}
       onSubmit={(values, actions) => {
-        // перевірка на існуюче ім'я контакту
         if (
           contacts.some(
             contact =>
@@ -58,7 +52,6 @@ export const ContactForm = () => {
               values.name.toLocaleLowerCase()
           )
         ) {
-          // повідомлення
           toast.error(
             `${values.name} ${notificationMassege}`,
             notificationOptions
@@ -66,14 +59,13 @@ export const ContactForm = () => {
           return;
         }
         dispatch(addContact({ ...values, id: nanoid() }));
-        // console.log(values);
+
         actions.resetForm();
       }}
     >
       <Form>
         <FormField>
           <LabelWrapper>
-            <FaUser size="16" />
             Name
           </LabelWrapper>
           <FieldInput name="name" />
@@ -82,7 +74,6 @@ export const ContactForm = () => {
 
         <FormField>
           <LabelWrapper>
-            <BsFillTelephoneFill size="16" />
             Number
           </LabelWrapper>
           <FieldInput name="number" />
@@ -90,7 +81,6 @@ export const ContactForm = () => {
         </FormField>
 
         <FormBtnAdd type="submit">
-          <FaUserPlus size="16" />
           Add contact
         </FormBtnAdd>
       </Form>

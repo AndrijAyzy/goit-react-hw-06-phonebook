@@ -15,21 +15,16 @@ export const Item = styled.li`
 `;
 
 export const ListBtnDel = styled.button`
-  width: 30px;
-  padding: 3px;
-  border-radius: 5px;
-  border: none;
-  background-color: ${p => p.theme.colors.accentLight};
-  transition: all 0.2s ease-in-out;
-  :hover,
-  :focus {
-    background-color: ${p => p.theme.colors.accentDark};
-    color: #fff;
-    box-shadow: -2px -2px 5px #fff,
-      2px 2px 5px ${p => p.theme.colors.accentDark};
-    svg {
-      fill: #fff;
-      stroke: #fff;
-    }
-  }
+width: 100px;
+padding: 0px;
+height: 25px;
+color: #black;
+border: 1px solid #000000;
+border-radius: 5px;
+cursor: pointer;
+transition: all 0.25s linear 0s;
+&:hover,
+&:focus {
+  border: 1px solid #white; background: #ff0000;
+  transform: scale(1.1);
 `;

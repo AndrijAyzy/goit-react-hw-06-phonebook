@@ -9,12 +9,12 @@ export const Form = styled(FormikForm)`
   width: 390px;
   padding: 20px;
   margin-bottom: 30px;
-  border: 1px solid ${props => props.theme.colors.accentDark};
+  border: 1px solid #000000;
+  background: #00e3db;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  box-shadow: -1px -1px 5px #fff, 1px 1px 5px ${p => p.theme.colors.accentDark};
 `;
 
 export const FormField = styled.label`
@@ -26,8 +26,6 @@ export const FieldInput = styled(Field)`
   padding: 10px;
   border: none;
   border-radius: 5px;
-  box-shadow: inset 1px 1px 3px ${props => props.theme.colors.accentLight},
-    inset -1px -1px 5px ${props => props.theme.colors.accentLight};
 `;
 
 export const LabelWrapper = styled.div`
@@ -44,27 +42,17 @@ export const ErrorMessage = styled(FormikErrorMessage)`
 `;
 
 export const FormBtnAdd = styled.button`
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 5px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 32px;
+  border-radius: 7px;
+  cursor: pointer;
+  color: #black;
+  border: 1px solid #000000;
   border-radius: 5px;
-  border: none;
-  background-color: ${p => p.theme.colors.accentLight};
-  transition: all 0.2s ease-in-out;
-  :hover,
-  :focus {
-    background-color: ${p => p.theme.colors.accentDark};
-    color: #fff;
-    box-shadow: -2px -2px 5px #fff,
-      2px 2px 5px ${p => p.theme.colors.accentDark};
-    svg {
-      fill: #fff;
-      stroke: #fff;
-    }
-  }
+  cursor: pointer;
+  transition: all 0.25s linear 0s;
+  &:hover,
+  &:focus {
+  border: 1px solid #white; background: #1ca105;
+  transform: scale(1.1);
 `;
+

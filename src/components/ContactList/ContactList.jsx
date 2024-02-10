@@ -5,10 +5,9 @@ import { getContacts, getFilter } from 'redux/selectors';
 import { deleteContact } from 'redux/contactsSlice';
 
 export const ContactList = () => {
-  // Отримуємо необхідну частину стану зі стору
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
-  // Для того щоб сповістити сторінку про те, що в інтерфейсі відбулася якась подія, необхідно відправити екшен.
+
   const dispatch = useDispatch();
 
   const normalizeFilter = filter.toLocaleLowerCase();
@@ -29,7 +28,7 @@ export const ContactList = () => {
           <span>{item.name}</span>
           <span>{item.number}</span>
           <ListBtnDel onClick={() => delContact(item.id)}>
-            <FaUserMinus size="16" />
+            <p>Delete</p>
           </ListBtnDel>
         </Item>
       ))}
