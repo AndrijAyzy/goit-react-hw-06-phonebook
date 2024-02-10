@@ -11,7 +11,8 @@ const Contacts = () => {
   const visibleContacts = getVisibleContacts(contacts, filter);
   return (
     <>
-  
+      <Title>Contacts</Title>
+
       {contacts.length > 0 ? (
         <ContactsList>
           {visibleContacts.map(({ name, number, id }) => (
