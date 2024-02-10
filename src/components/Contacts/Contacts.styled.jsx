@@ -1,5 +1,14 @@
 import styled from '@emotion/styled';
 
+export const Title = styled.h2`
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom:10px
+
+`;
+
 export const ContactsList = styled.ul`
   list-style: none;
   margin: 0;
