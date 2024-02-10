@@ -5,20 +5,32 @@ on:
     branches: [main]
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
-
-      - name: Install, lint, build 🔧
-        run: |
-          npm install
-          npm run lint:js
-          npm run build
-
-      - name: Deploy 🚀
+      - name: Checkout code
+        uses: actions/checkout@v2
+    
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+    
+      - name: Install dependencies
+        run: npm install
+    
+      - name: Build
+        run: npm run build  # Replace this with your actual build command
+    
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           branch: gh-pages
-          folder: build
+          folder: build  # Adjust this path based on your project structure
+
+      - name: Налаштування Git
+        run: |
+          git remote rm origin
+          git remote add origin https://github.com/AndrijAyzy/goit-react-hw-06-phonebook.git
+
+    
