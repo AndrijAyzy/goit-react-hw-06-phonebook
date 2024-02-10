@@ -1,17 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from 'components/App';
-import './index.css';
-import { store, persistor } from './redux/store';
+import { ThemeProvider } from 'styled-components';
+// redux
 import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
+import { store } from 'redux/store';
+
+const theme = {
+  colors: {
+    main: '#212624',
+    bgc: '#c8c7cd',
+    accentLight: '#9199be',
+    accentDark: '#54678f',
+    error: '#720017',
+  },
+};
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    {/* Після створення стору необхідно зв'язати його з компонентами React, щоб
+    вони могли отримувати доступ до стору та його методів. Для цього у
+    бібліотеці React Redux є компонент Provider, котрий чекає однойменний пропс
+    store. Для того щоб будь-який компонент у додатку міг використовувати стор,
+    обертаємо Provider все дерево компонентів. */}
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-      <App />
-      </PersistGate>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>
 );

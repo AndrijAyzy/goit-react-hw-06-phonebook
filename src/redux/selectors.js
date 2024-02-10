@@ -1,10 +1,5 @@
-export const getContacts = state => state.contacts.contacts;
+// Один і той же селектор може використовуватися в декількох місцях програми, що призводить до дублювання коду. Щоб уникнути цього та ще більше структурувати код, всі функції-селектори оголошуються в окремому файлі, після чого імпортуються до компонентів.
 
-export const getFilter = state => state.filter.filter;
-
-// const getVisibleContacts = (contacts, filterValue) => {
-//   const filtredContacts = contacts.filter(contact =>
-//     contact.name.toLowerCase().includes(filterValue.toLowerCase())
-//   );
-//   return filtredContacts;
-// };
+// змінні для необхідних частин стану, щоб отримати дані зі стору через хук useSelector(selector)
+export const getContacts = state => state.contacts.items;
+export const getFilter = state => state.filter;

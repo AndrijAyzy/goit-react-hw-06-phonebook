@@ -1,25 +1,19 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
-export const Label = styled.label`
-  margin: 0px;
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  text-align: center;
+export const Input = styled.input`
+  margin-left: 5px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 3px ${props => props.theme.colors.accentLight},
+    inset -1px -1px 5px ${props => props.theme.colors.accentLight};
 `;
 
-export const FilterInput = styled.input`
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
+export const SearchField = styled.label`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
-  padding: 15px;
-
-  border: 0;
-  outline: 0;
-  font-size: 1.3rem;
-  color: black;
-  background-color: white;
-
-  border-radius: 5px;
+  /* font-size: 14px; */
+  color: ${props => props.theme.colors.accentDark}; ;
 `;

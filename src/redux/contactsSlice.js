@@ -1,50 +1,30 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { nanoid } from 'nanoid';
-import Notiflix from 'notiflix';
-import initContacts from '../services/contacts.json';
+import initialContacts from '../components/contacts.json';
 
-export const contactsSlice = createSlice({
+const initialState = {
+  // ініціалізація із файлу contact.json
+  items: initialContacts,
+};
+
+// Slice для поля 'contacts' з файлу store.js
+const contactsSlice = createSlice({
+  //назва поля в нашому стейті
   name: 'contacts',
-  initialState: {
-    contacts: initContacts,
-  },
+  //початковий стан
+  initialState,
+  //редюсери
   reducers: {
-    addContact: {
-      reducer(state, action) {
-        if (
-          state.contacts.find(
-            existingContact => existingContact.name === action.payload.name
-          )
-        ) {
-          Notiflix.Notify.failure(
-            `${action.payload.name} is already in your contacts`
-          );
-        } else {
-          state.contacts.unshift(action.payload);
-
-          Notiflix.Notify.success(
-            `${action.payload.name} has been successfully added to  your phonebook`
-          );
-        }
-      },
-      prepare(name, number) {
-        return {
-          payload: {
-            name,
-            number,
-            id: nanoid(),
-          },
-        };
-      },
+    addContact: (state, action) => {
+      state.items = [...state.items, action.payload];
     },
-
-    deleteContact(state, action) {
-      state.contacts = state.contacts.filter(
-        contact => contact.id !== action.payload
-      );
+    // видаляємо елемент з масиву по id
+    deleteContact: (state, action) => {
+      state.items = state.items.filter(item => item.id !== action.payload);
     },
   },
 });
 
+// console.log(contactsSlice);
+
 export const { addContact, deleteContact } = contactsSlice.actions;
-export default contactsSlice.reducer;
+export const contactsReducer = contactsSlice.reducer;
